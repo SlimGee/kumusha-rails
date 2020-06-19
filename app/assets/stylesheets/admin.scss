@@ -1,0 +1,14 @@
+/**
+ *= require bootstrap
+ *= require startbootstrap-sb-admin-2/css/sb-admin-2
+ *= require filepond/dist/filepond
+ *= require filepond-plugin-image-preview/dist/filepond-plugin-image-preview
+ *= require_self
+ */
+
+ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+ @import '@fortawesome/fontawesome-free/scss/fontawesome';
+ @import '@fortawesome/fontawesome-free/scss/solid';
+ @import '@fortawesome/fontawesome-free/scss/regular';
+ @import '@fortawesome/fontawesome-free/scss/brands';
+ @import '@fortawesome/fontawesome-free/scss/v4-shims';

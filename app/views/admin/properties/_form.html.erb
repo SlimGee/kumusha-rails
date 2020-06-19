@@ -1,0 +1,92 @@
+    <%= form_with(model: property, local: true, multipart: true, url: admin_properties_path, id: 'form') do |form| %>
+      <% if property.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+          <ul>
+            <% property.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <div class="col-md-12 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+            <div class="align-items-center">
+                <div class="row">
+                    <div class="col-md-6  border-right-success">
+                        <div class="card-title">
+                            <h4 class="h4">Property Information</h4>
+                        </div>
+                        <div class="form-group">
+                          <%= form.label :title %>
+                          <%= form.text_field :title, class: 'form-control' %>
+                        </div>
+
+                        <div class="form-group">
+                          <%= form.label :address %>
+                          <%= form.text_field :address, class: 'form-control' %>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <%= form.label "Hosing Units" %>
+                                <%= form.number_field :units, class: 'form-control' %>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <%= form.label :bedrooms %>
+                                <%= form.number_field :bedrooms, class: 'form-control' %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <%= form.label :dinig_rooms %>
+                                <%= form.number_field :dinig_rooms, class: 'form-control' %>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <%= form.label :kitchens %>
+                                <%= form.number_field :kitchens, class: 'form-control' %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <%= form.label "Yard (sqm)" %>
+                                <%= form.text_field :yard, class: 'form-control' %>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <%= form.label :rooms %>
+                                <%= form.number_field :rooms, class: 'form-control' %>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <%= form.label :description %>
+                          <%= form.text_area :description, class: 'form-control' %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card-title">
+                            <h4 class="h4">Images</h4>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="file" name="images[]" class="filepond" value="">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <%= form.submit 'Create Property', class: 'btn btn-primary btn-block' %>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>

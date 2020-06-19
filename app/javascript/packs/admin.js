@@ -55,5 +55,6 @@ $(document).on('turbolinks:load', () => {
         const request = new XMLHttpRequest()
         request.open('POST', '/admin/properties')
         request.send(form)
+        Turbolinks.visit(request.responseUrl)
     })
 })

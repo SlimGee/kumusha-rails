@@ -54,7 +54,13 @@ $(document).on('turbolinks:load', () => {
 
         const request = new XMLHttpRequest()
         request.open('POST', '/admin/properties')
+        request.onload = () => {
+            console.log(request);
+            Turbolinks.visit(request.responseURL)
+        }
+        request.onprogress = () => {
+            document.querySelector('#parent-loader').classList.remove('d-none')
+        }
         request.send(form)
-        Turbolinks.visit(request.responseUrl)
     })
 })

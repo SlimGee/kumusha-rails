@@ -21,21 +21,6 @@ class PropertiesController < ApplicationController
   def edit
   end
 
-  # POST /properties
-  # POST /properties.json
-  def create
-    @property = Property.new(property_params)
-
-    respond_to do |format|
-      if @property.save
-        format.html { redirect_to @property, notice: 'Property was successfully created.' }
-        format.json { render :show, status: :created, location: @property }
-      else
-        format.html { render :new }
-        format.json { render json: @property.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json

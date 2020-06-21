@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <%= image_tag 'property.jpg', class: 'img-responsive', alt: 'kumusha properties' %>
             </div>
-            <div class="col-lg-5 col-md-7 text-center wrap-feature30-box" data-aos="fade-left" data-aos-duration="1800" data-aos-easing="linear">
+            <div class="col-lg-5 col-md-7 text-center wrap-feature30-box" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear">
                 <div class="card card-shadow">
                     <div class="card-body">
                         <div class="p-20">
@@ -30,87 +30,36 @@
         </div>
         <!-- Row  -->
         <div class="row m-t-40">
+            <% @properties.each do |property|%>
             <!-- Column -->
             <div class="col-md-4">
                 <div class="card card-shadow" data-aos="flip-left" data-aos-duration="1200">
                     <a href="#" class="img-ho">
-                        <%= image_tag 'property.jpg', class: 'card-img-top', alt: '' %>
+                        <%= image_tag property.property_images.first.image_url, class: 'card-img-top', alt: '' %>
                     </a>
                     <div class="d-flex justify-content-between attributes p-3 bg-light">
                         <div class="attribute text-center">
-                            <i class="fa fa-2x fa-home font-medium"></i> 4
+                            <i class="fa fa-2x fa-home font-medium"></i> <%= property.bedrooms %>
                             <p>Bedrooms</p>
                         </div>
                         <div class="attribute text-center">
-                            <i class="fa fa-2x fa-desktop font-medium"></i> <span class="text-lg">2</span>
+                            <i class="fa fa-2x fa-desktop font-medium"></i> <%= property.rooms %>
                             <p>Bathrooms</p>
                         </div>
                         <div class="attribute text-center">
-                            <i class="fa fa-2x fa-bus font-medium"></i> 1
+                            <i class="fa fa-2x fa-bus font-medium"></i> <%= property.units %>
                             <p>Borehole</p>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="font-medium m-b-0">Budiriro 5, Harare</h5>
+                        <h5 class="font-medium m-b-0"> <%= property.address %> </h5>
                         <p class="m-b-0 font-14">4 bedroom house in Budiriro</p>
-                        <p class="text-danger font-bold">$2 443, 00</p>
+                        <p class="text-danger font-bold"> <%=  %> </p>
                     </div>
                 </div>
             </div>
+            <% end %>
 
-            <div class="col-md-4">
-                <div class="card card-shadow" data-aos="flip-left" data-aos-duration="1200">
-                    <a href="#" class="img-ho">
-                        <img class="card-img-top" src="{{ asset('images/property.jpg') }}" alt="" />
-                    </a>
-                    <div class="d-flex justify-content-between attributes p-3 bg-light">
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-home font-medium"></i> 4
-                            <p>Bedrooms</p>
-                        </div>
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-desktop font-medium"></i> <span class="text-lg">2</span>
-                            <p>Bathrooms</p>
-                        </div>
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-bus font-medium"></i> 1
-                            <p>Borehole</p>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="font-medium m-b-0">Budiriro 5, Harare</h5>
-                        <p class="m-b-0 font-14">4 bedroom house in Budiriro</p>
-                        <p class="text-danger font-bold">$2 443, 00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-shadow" data-aos="flip-left" data-aos-duration="1200">
-                    <a href="#" class="img-ho">
-                        <img class="card-img-top" src="{{ asset('images/property.jpg') }}" alt="" />
-                    </a>
-                    <div class="d-flex justify-content-between attributes p-3 bg-light">
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-home font-medium"></i> 4
-                            <p>Bedrooms</p>
-                        </div>
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-desktop font-medium"></i> <span class="text-lg">2</span>
-                            <p>Bathrooms</p>
-                        </div>
-                        <div class="attribute text-center">
-                            <i class="fa fa-2x fa-bus font-medium"></i> 1
-                            <p>Borehole</p>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="font-medium m-b-0">Budiriro 5, Harare</h5>
-                        <p class="m-b-0 font-14">4 bedroom house in Budiriro</p>
-                        <p class="text-danger font-bold">$2 443, 00</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -7,7 +7,7 @@ class PropertyImageUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
   process :convert => 'png'
-  process :tags => ['[property_picture']
+  process :tags => ['property_picture']
 
   version :standard do
       process :resize_to_fill => [350, 400, :fill]

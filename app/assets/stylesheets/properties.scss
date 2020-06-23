@@ -205,56 +205,59 @@ Blog homepage 3
       -ms-transform: scale(1.05);
       transform: scale(1.05); }
 
-/*******************
-Feature 3
-*******************/
-.wrap-feature3-box .card-body {
-  padding: 40px; }
-  .wrap-feature3-box .card-body .icon-space {
-    padding: 0px 40px 20px 0px; }
 
-/*******************
-Testimonial 10
-*******************/
-.testimonial10 .testi10 .quote-bg {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 60px;
-  background: url(../images/up-quote.png) no-repeat top left, url(../images/down-quote.png) no-repeat bottom right; }
+.property-header{
+    position: relative;
+    .image{
+        height: 80vh;
+        width: 100vw;
+    }
+    .info-card{
+        position: absolute;
+        right: 10px;
+        bottom: -35%;
+    }
+}
 
-.testimonial10 .testi10 h3 {
-  line-height: 40px; }
+@media screen and (max-width: 776px) {
+    .property-header{
+        .info-card{
+            position: relative;
+            right: unset;
+            bottom: unset;
+        }
+    }
+}
 
-.testimonial10 .testi10 .customer-thumb {
-  margin: 15px 0; }
-  .testimonial10 .testi10 .customer-thumb img {
-    width: 60px; }
 
-@media (max-width: 767px) {
-  .testimonial10 .testi10 h3 {
-    line-height: 30px;
-    font-size: 20px; } }
+/**************************
+Property show image slides
+*************************/
 
-/*******************
-Client 2
-*******************/
-.client2 {
-  padding: 40px 0; }
-  .client2 .client-box {
-    margin: 0px; }
-    .client2 .client-box [class*="col-"] {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-top {
+    height: 100%;
+    width: 100%;
+}
+
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    top: -20%;
+}
+
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+    border: 3px solid #1dc8cc;
+}

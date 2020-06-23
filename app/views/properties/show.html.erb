@@ -1,34 +1,47 @@
 <div class="static-site-head" style="z-index:999999">
-    <div class="row no-gutters" style="position:relative">
-        <div class="col-md-5 text-white" style="background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);">
-            <div class="vertical-middle p-5" style="transform:translateY(50%)">
-
-                <h1 class="title text-white font-bold display-4" style="font-family: 'El Messiri', sans-serif;"><%= @property.title %></h1>
-                <h6 class="subtitle text-white" style="font-family: 'El Messiri', sans-serif;"><i class="fa fa-map-marker"></i> <%= @property.address %>, <%= @property.city %> </h6>
-            </div>
-
+    <div class="row no-gutters property-header">
+        <div class="w-100 image">
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <% @property.property_images.each do |img| %>
+                        <div class="swiper-slide" style="background-image:url( <%= img.image_url %> )"></div>
+                    <% end %>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+              </div>
+              <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <% @property.property_images.each do |img| %>
+                        <div class="swiper-slide" style="background-image:url( <%= img.image_url %> )"></div>
+                    <% end %>
+                </div>
+              </div>
         </div>
-        <div class="col-md-7">
-            <%= image_tag '1.jpg', class: 'img-responsive' %>
-        </div>
-        <div class="col-md-4" style="position:absolute; right: 15px; bottom: -35%;">
+        <div class="col-md-4 info-card" style="z-index:99999">
             <div class="card border-left-warning shadow h-100 py-2">
               <div class="card-body">
                 <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                     <div class="text-xs text-muted  mb-1">Price</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">$18500</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">$ <%= @property.price %> </div>
                   </div>
                   <div class="col-auto">
                       <div class="text-xs text-muted mb-1">Availability</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">Right Now</div>
                   </div>
+
+                  <div class="col-auto">
+                      <h1 class="title font-bold" style="font-family: 'El Messiri', sans-serif;">
+                          <%= @property.title %>
+                      </h1>
+                      <h6 class="subtitle" style="font-family: 'El Messiri', sans-serif;">
+                          <i class="fa fa-map-marker"></i> <%= @property.address %>, <%= @property.city %>
+                      </h6>
+                  </div>
                 </div>
                 <div class="row no-gutters align-items-center mt-5">
-                  <div class="col mr-2">
-                      <button type="button" class="btn btn-sm btn-outline-primary"><i class="fa fa-share"></i> Share Property</button> <br>
-                      <button type="button" class="btn btn-sm btn-outline-danger mt-1"><i class="fa fa-heart-o"></i> Add To Favorites</button>
-                  </div>
                   <div class="col-auto">
                       <button type="button" class="btn btn-success-gradiant">Schedule A Showing</button>
                   </div>
@@ -42,44 +55,120 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Description</h3>
+                        <p class="p-3 card-text">
+                            <%= @property.description %>
+                        </p>
+                    </div>
+                </div>
 
-                <div class="d-flex justify-content-center">
-                    <div class="text-center col-sm-6">
-                        <i class="fa fa-bed"></i>
-                        <p class="">Bedrooms</p>
-                        <p class="font-medium display-7"> <%= @property.bedrooms %> </p>
-                    </div>
-                    <div class="text-center col-sm-6">
-                        <i class="fa fa-home"></i>
-                        <p>Housing Units</p>
-                        <p class="font-medium display-7"> <%= @property.units %> </p>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Features and Facts  </h3>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-bed text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Bedrooms</div>
+                                    <div class="font-bold w-100"> <%= @property.bedrooms %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-home text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Housing Units</div>
+                                    <div class="font-bold w-100"> <%= @property.units %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-bars text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Kitchens</div>
+                                    <div class="font-bold w-100"> <%= @property.kitchens %> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-square-o text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Square Footage</div>
+                                    <div class="font-bold w-100"> <%= @property.yard.round %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-windows text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Rooms</div>
+                                    <div class="font-bold w-100"> <%= @property.rooms %> </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <div class="text-center col-sm-6">
-                        <i class="fa fa-square-o"></i>
-                        <p>Square Footage</p>
-                        <p class="font-medium display-7"> <%= @property.yard %> </p>
-                    </div>
-                    <div class="text-center col-sm-6">
-                        <i class="fa fa-home"></i>
-                        <p>Housing Units</p>
-                        <p class="font-medium display-7"> <%= @property.units %> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <p class="p-3 lead">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header bg-transparent">
-                        <div class="card-title">
-                            <span class="h3">Speak To Agent</span>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Extras</h3>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-bed text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Bedrooms</div>
+                                    <div class="font-bold w-100"> <%= @property.bedrooms %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-home text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Housing Units</div>
+                                    <div class="font-bold w-100"> <%= @property.units %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-bars text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Kitchens</div>
+                                    <div class="font-bold w-100"> <%= @property.kitchens %> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div class="d-flex justify-content-between">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-square-o text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Square Footage</div>
+                                    <div class="font-bold w-100"> <%= @property.yard.round %> </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="icon p-2">
+                                    <i class="fa fa-2x fa-windows text-success"></i>
+                                </div>
+                                <div class="name ml-3 d-flex flex-wrap">
+                                    <div class="w-100">Rooms</div>
+                                    <div class="font-bold w-100"> <%= @property.rooms %> </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,3 +176,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('turbolinks:load', () => {
+        let galleryThumbs = new Swiper.default('.gallery-thumbs', {
+          spaceBetween: 10,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+        })
+        let galleryTop = new Swiper.default('.gallery-top', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          thumbs: {
+            swiper: galleryThumbs
+          }
+        })
+    })
+</script>

@@ -1,6 +1,6 @@
 class Admin::PropertiesController < ApplicationController
     layout 'admin'
-    before_action :authenticate_user!, only: [:create]
+    before_action :authenticate_user!
     before_action :set_property, only: [:destroy, :edit, :update]
     def index
       @properties = Property.all

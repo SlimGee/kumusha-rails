@@ -5,6 +5,8 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -64,7 +66,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">All</a>
+            <%= link_to 'All', admin_properties_path, class: 'collapse-item' %>
             <%= link_to "Add New", new_admin_property_path, class: 'collapse-item' %>
             <a class="collapse-item" href="cards.html">Vacant</a>
             <a class="collapse-item" href="cards.html">Sold</a>

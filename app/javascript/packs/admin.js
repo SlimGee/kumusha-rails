@@ -65,11 +65,3 @@ $(document).on('turbolinks:load', () => {
         request.send(form)
     })
 })
-
-require( 'datatables.net-bs4' )($, window);
-require( 'datatables.net-autofill-bs4' )();
-require( 'datatables.net-buttons-bs4' )();
-require( 'datatables.net-buttons/js/buttons.colVis.js' )();
-require( 'datatables.net-buttons/js/buttons.html5.js' )();
-require( 'datatables.net-responsive-bs4' )();
-require( 'datatables.net-searchpanes-bs4' )();

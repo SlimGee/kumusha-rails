@@ -13,15 +13,15 @@
                         <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email" %>
                     </div>
 
-                    <div class="field">
+                    <div class="form-group">
                         <%= f.label :password %><br />
                         <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
                     </div>
 
                     <% if devise_mapping.rememberable? %>
-                    <div class="field">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label :remember_me %>
+                    <div class="custom-control custom-checkbox my-2">
+                        <%= f.check_box :remember_me, class: 'custom-control-input' %>
+                        <%= f.label :remember_me , class: 'custom-control-label'%>
                     </div>
                     <% end %>
 

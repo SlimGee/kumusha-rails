@@ -52,10 +52,17 @@ class Admin::PropertiesController < ApplicationController
       end
     end
 
+    def not_found
+        raise ActionController::RoutingError.new('Not Found')
+    end
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_property
-        @property = Property.find(params[:id])
+          if !Property.exists?(params[:id])
+              self.not_found
+          end
+          @property = Property.find(params[:id])
       end
 
       # Only allow a list of trusted parameters through.

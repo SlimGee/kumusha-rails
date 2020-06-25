@@ -15,6 +15,7 @@
     "datatables.net-buttons-bs4": "^1.6.2",
     "datatables.net-responsive-bs4": "^2.2.5",
     "datatables.net-searchpanes-bs4": "^1.1.1",
+    "datatables.net-searchpanes-dt": "^1.1.1",
     "dropzone": "^5.7.1",
     "filepond": "^4.17.1",
     "filepond-plugin-file-encode": "^2.1.6",

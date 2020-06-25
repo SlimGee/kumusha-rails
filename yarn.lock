@@ -2438,6 +2438,14 @@ datatables.net-buttons@1.6.2:
     datatables.net "^1.10.15"
     jquery ">=1.7"
 
+datatables.net-dt@^1.10.15:
+  version "1.10.21"
+  resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.10.21.tgz#2a3bb65bbb39362a36e75b989da7d08bc1fb4313"
+  integrity sha512-P89PgkhVCB6shP0CbigmB1Z812yfdfhvAbUdg08mLuF7tuvLFPQC9F+WIV30Hj9mgMsPALWAEJEYAA3aJjuqIA==
+  dependencies:
+    datatables.net "1.10.21"
+    jquery ">=1.7"
+
 datatables.net-responsive-bs4@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/datatables.net-responsive-bs4/-/datatables.net-responsive-bs4-2.2.5.tgz#c81e6c24b80237ee326454a40b08345563361ebb"
@@ -2461,6 +2469,15 @@ datatables.net-searchpanes-bs4@^1.1.1:
   integrity sha512-YXtDLCt4TNL9ZPs1F1qCwGYuRaKdlysbdQPlUVew2RnsdBJjU6AZSiQhZ3/4y6Cj9FVtW+TuQ0DbnqDq6ljmEg==
   dependencies:
     datatables.net-bs4 "^1.10.15"
+    datatables.net-searchpanes "1.1.1"
+    jquery ">=1.7"
+
+datatables.net-searchpanes-dt@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/datatables.net-searchpanes-dt/-/datatables.net-searchpanes-dt-1.1.1.tgz#6b91b41c9628a66cec50459d17a8ab279a96f50d"
+  integrity sha512-kLFIAMBL297CL/XVMpsR/mSoeA6jbk+w0MDbE6u1I588Xm+VE/FrVBk6V7HxvJ3C2OfzufkaZC038GjP/33O7A==
+  dependencies:
+    datatables.net-dt "^1.10.15"
     datatables.net-searchpanes "1.1.1"
     jquery ">=1.7"
 

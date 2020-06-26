@@ -22,3 +22,18 @@ window.Swiper = require('swiper')
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).ready(() => {
+    $('#startSearch').on('click', () => {
+        let place = $('#city').val()
+        let price = $('#price').val()
+        if (place.length > 1 && price.length > 1) {
+            Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place).concat('&price=').concat(price))
+        } else if (place.length > 1) {
+            Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place))
+        }
+        else {
+
+        }
+    })
+})

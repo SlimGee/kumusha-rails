@@ -39,23 +39,42 @@
            <!-- ============================================================== -->
            <!-- Top header  -->
            <!-- ============================================================== -->
-           <div class="topbar <% if defined? @property %> d-none <% end %>">
-               <div class="header12 po-relative">
+           <div class="topbar bg-white <% if defined? @property %> d-none <% end %>">
+               <div class="header11 po-relative">
                    <div class="container">
-                       <nav class="navbar navbar-expand-lg hover-dropdown h12-nav">
-                           <a class="navbar-brand" href="#">
-                               <%= image_tag 'logo_transparent.png', alt: 'Kumusha Properties' %>
+                       <nav class="navbar navbar-expand-lg h11-nav">
+                           <a class="navbar-brand" href=" <%= root_path %> ">
+                               <%= image_tag 'logo_transparent.png', alt: 'Kumusha Properties' %> Kumusha <span class="d-none d-md-inline">Properties</span>
                            </a>
-                           <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header12a" aria-controls="header12a" aria-expanded="false" aria-label="Toggle navigation">
+                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header12a" aria-controls="header12a" aria-expanded="false" aria-label="Toggle navigation">
                                <span class="fa fa-bars"></span>
                            </button>
-                           <div class="collapse navbar-collapse" id="header12a">
+
+                           <div class="collapse navbar-collapse flex-column font-13" id="header12a">
+                               <div class="ml-auto h11-topbar">
+
+                                        <ul class="list-inline ">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a><i class="icon-Phone-2"></i> 215 123 4567</a></li>
+                                        </ul>
+
+                               </div>
                                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                                    <li class="nav-item">
-                                       <%= link_to "Home", root_path, class: 'nav-link' %>
+                                        <% if current_page?(root_path) %>
+                                            <%= link_to "Home", root_path, class: 'nav-link active' %>
+                                        <% else %>
+                                            <%= link_to "Home", root_path, class: 'nav-link' %>
+                                        <% end %>
                                    </li>
                                    <li class="nav-item">
-                                       <%= link_to "Property", properties_path, class: 'nav-link' %>
+                                        <% if current_page?(properties_path) %>
+                                            <%= link_to "Property", properties_path, class: 'nav-link active' %>
+                                        <% else %>
+                                            <%= link_to "Property", properties_path, class: 'nav-link ' %>
+                                        <% end %>
                                    </li>
                                    <li class="nav-item">
                                        <%= link_to "About Us", properties_path, class: 'nav-link' %>

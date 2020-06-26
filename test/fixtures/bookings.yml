@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-06-25 17:04:22
+  property: one
+  name: MyString
+  phone: MyString
+  email: MyString
+  attended: 
+
+two:
+  date: 2020-06-25 17:04:22
+  property: two
+  name: MyString
+  phone: MyString
+  email: MyString
+  attended: 

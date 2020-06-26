@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_125754) do
+ActiveRecord::Schema.define(version: 2020_06_25_150421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "property_id", null: false
+    t.string "name"
+    t.string "phone"
+    t.string "email"
+    t.boolean "attended"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id"], name: "index_bookings_on_property_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -31,6 +43,9 @@ ActiveRecord::Schema.define(version: 2020_06_21_125754) do
     t.float "price"
     t.string "city"
     t.string "country"
+    t.string "sale_type"
+    t.string "status"
+    t.date "availability"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
@@ -54,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_125754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "properties"
   add_foreign_key "properties", "users"
   add_foreign_key "property_images", "properties"
 end

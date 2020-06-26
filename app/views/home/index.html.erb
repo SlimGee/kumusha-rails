@@ -1,61 +1,34 @@
-
-<section id="slider-sec" class="slider10">
-    <div id="slider10" class="carousel bs-slider slide control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="7000">
-        <ol class="carousel-indicators">
-            <li data-target="#slider7" data-slide-to="0" class="active"></li>
-            <li data-target="#slider7" data-slide-to="1"></li>
-        </ol>
-
-        <!-- Wrapper For Slides -->
-        <div class="carousel-inner" role="listbox">
-            <% @featured.each do |property| %>
-                <div class="carousel-item <% if property.id == @featured.first.id %> active <% end %>">
-                    <%= image_tag property.property_images.second.image_url, class: 'slide-image img-responsive' %>
-                    <div class="slide-text slide_style_left">
-                        <div class="container" data-animation="animated fadeInLeft">
-                            <div class="bg-white slide-content po-relative">
-                                <label class="label text-white bg-info">ON RENT</label>
-                                <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                                    <%= link_to property.title,property, class: 'link' %>
-                                </h3>
-                                <h6> <%= property.address %> </h6>
-
-                                <h2 class="text-info m-b-0">$ <%= property.price %> <span class="tag bg-danger">Hot Offer</span></h2>
-                            </div>
-                            <div class="bg-light slide-content specifiaction-box">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <h6 class="specifiaction text-muted">Bedrooms</h6>
-                                        <h5 class="m-b-0 font-medium">
-                                            <%= property.bedrooms %>
-                                        </h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <h6 class="specifiaction text-muted">Housing Units</h6>
-                                        <h5 class="m-b-0 font-medium">
-                                            <%= property.units %>
-                                        </h5>
-                                    </div>
-                                    <div class="col-4">
-                                        <h6 class="specifiaction text-muted">Kitchens</h6>
-                                        <h5 class="m-b-0 font-medium">
-                                            <%= property.kitchens %>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
+<section class="">
+        <div id="banner4" class="banner hero" style="background-image:url( <%= image_url('3.jpg') %> )">
+            <div class="banner-content">
+                <div class="container" data-aos="fade-down" data-aos-duration="1500">
+                    <h2 class="title text-white text-center font-bold m-b-30">There's no place like home,<br> Get yours today</h2>
+                    <div class="row form-data" id="search">
+                        <div class="col-sm-6 col-md-4 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
+                            <i class="fa fa-map-marker text-danger"></i>
+                            <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
                         </div>
-                    </div>
-                </div>
-            <% end %>
+                        <div class="col-sm-6 col-md-4 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
+                           <i class="fa fa-list text-danger"></i>
+                           <span class="span-select b-b m-l-20">
+                               <select class="b-0 custom-select form-control text-uppercase">
+                                   <option>For Sale</option>
+                               </select>
+                               <i class="fa fa-angle-down"></i>
+                           </span>
+                       </div>
 
-            <div class="slider-control hide">
-                <a class="left carousel-control-prev text-danger font-14" href="#slider7" role="button" data-slide="prev"> <span class="bg-white text-center ti-arrow-left" aria-hidden="true"></span> <b class="sr-only font-normal">Previous</b> </a>
-                <a class="right carousel-control-next text-danger font-14" href="#slider7" role="button" data-slide="next"> <span class="bg-white text-center ti-arrow-right" aria-hidden="true"></span> <b class="sr-only font-normal">Next</b> </a>
-            </div>
-        </div>
-    </div>
-</section>
+                       <div class="col-sm-6 col-md-3 p-b-10 p-t-10 bg-white">
+                           <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
+                      </div>
+                      <div class="col-md-1 p-0">
+                          <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control"><i class="fa fa-search"></i></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
 
 <div class="spacer bg-light">
@@ -105,63 +78,47 @@
     </div>
 </div>
 
+<div class="spacer feature42" style="background-image:url( <%= image_url('2.jpg') %> )">
 
-<div class="blog-home3 spacer">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h2 class="title">From Our Blog</h2>
+        <div class="row justify-content-center wrap-feature42-box">
+            <div class="col-md-10 col-lg-7 text-center aos-init aos-animate" data-aos="fade-up">
+                <h2 class="title text-white">We're Always the way to go</h2>
+                <h6 class="subtitle text-white op-7 m-b-20">
+                    Making a decision to sell your home is not easy, let alone selling it. Let us do the hard or you can begin with a valuation
+                </h6>
+                <a href="javascript:void(0)" class="btn btn-danger-gradiant btn-lg">Get Free Valuation</a>
             </div>
-        </div>
-        <div class="row m-t-40">
-            <div class="col-lg-6">
-                <div class="card" data-aos="flip-left" data-aos-duration="1200">
-                    <a href="#">
-                        <img class="card-img-top" src="http://via.placeholder.com/1224x1024" alt="wrappixel kit">
-                    </a>
-                    <div class="date-pos bg-info">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-                    <h5 class="font-medium m-t-30"><a href="#" class="link">Techonologies started to change Drastically</a></h5>
-                    <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card" data-aos="flip-up" data-aos-duration="1200">
-                            <a href="#"><img class="card-img-top" src="http://via.placeholder.com/1224x1024" alt="wrappixel kit"></a>
-                            <div class="date-pos bg-info">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-                            <h6 class="font-medium m-t-20"><a href="#" class="link">New Seminar on Newest Food Recipe from World’s Best</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card" data-aos="flip-up" data-aos-duration="1200">
-                            <a href="#"><img class="card-img-top" src="http://via.placeholder.com/1224x1024" alt="wrappixel kit"></a>
-                            <div class="date-pos bg-info">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-                            <h6 class="font-medium m-t-20"><a href="#" class="link">New Seminar on Newest Food Recipe from World’s Best</a></h6>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6">
-                        <div class="card" data-aos="flip-up" data-aos-duration="1200">
-                            <a href="#"><img class="card-img-top" src="http://via.placeholder.com/1224x1024" alt="wrappixel kit"></a>
-                            <div class="date-pos bg-info">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-                            <h6 class="font-medium m-t-20"><a href="#" class="link">New Seminar on Newest Food Recipe from World’s Best</a></h6>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6">
-                        <div class="card" data-aos="flip-up" data-aos-duration="1200">
-                            <a href="#"><img class="card-img-top" src="http://via.placeholder.com/1224x1024" alt="wrappixel kit"></a>
-                            <div class="date-pos bg-info">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-                            <h6 class="font-medium m-t-20"><a href="#" class="link">New Seminar on Newest Food Recipe from World’s Best</a></h6>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-            <!-- Column -->
         </div>
     </div>
+
+</div>
+
+
+<div class="">
+
+    <div class="wrap-feature-28 row">
+        <div class="col-lg-6 bg-cover" style="background-image:url( <%= image_url('1.jpg') %> )"></div>
+        <div class="col-lg-6">
+            <div class="side-content both-space">
+                <h2 class="title">We guide you in every step</h2>
+                <p>You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time and with great quality.</p>
+                <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="#f28"><span>View More <i class="ti-arrow-right"></i></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-feature-28 row">
+        <div class="col-lg-6">
+            <div class="side-content both-space text-right pull-right">
+                <h2 class="title">Your satisfaction, Our concern</h2>
+                <p>You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time and with great quality.</p>
+                <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="#f28"><span>View Feature28 code <i class="ti-arrow-right"></i></span></a>
+            </div>
+        </div>
+        <div class="col-lg-6 bg-cover" style="background-image:url( <%= image_url('4.jpg') %> )">
+        </div>
+    </div>
+
 </div>
 
 <div class="spacer feature14">

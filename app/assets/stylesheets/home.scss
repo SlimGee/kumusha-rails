@@ -303,91 +303,7 @@ Portfolio 1
       -ms-transform: scale(1.1);
       transform: scale(1.1); }
 
-/*******************
-Pricing 8
-*******************/
-.pricing8 .pricing-box sup {
-  top: -20px;
-  font-size: 16px; }
 
-.pricing8 .pricing-box .btn {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px; }
-
-/*******************
-team 2
-*******************/
-.team2 .pro-pic {
-  min-height: 200px; }
-  .team2 .pro-pic .card-img-overlay {
-    background: rgba(26, 139, 243, 0.87);
-    display: none; }
-    .team2 .pro-pic .card-img-overlay ul {
-      position: relative;
-      top: 50%;
-      text-align: center; }
-      .team2 .pro-pic .card-img-overlay ul li a {
-        color: #ffffff;
-        padding: 0 10px;
-        -webkit-transition: 0.1s ease-in;
-        -o-transition: 0.1s ease-in;
-        transition: 0.1s ease-in;
-        display: block; }
-        .team2 .pro-pic .card-img-overlay ul li a:hover {
-          -webkit-transform: translate3d(0px, -5px, 0px);
-          transform: translate3d(0px, -5px, 0px); }
-  .team2 .pro-pic:hover .card-img-overlay {
-    display: block; }
-
-.team2 .title {
-  margin: 30px 0 0 0; }
-
-.team2 .subtitle {
-  margin: 0 0 20px 0;
-  font-size: 13px; }
-
-/*******************
-Testimonial 3
-*******************/
-.testimonial3 .testi3 .card-body {
-  padding: 40px; }
-
-.testimonial3 .testi3 h6 {
-  line-height: 26px; }
-
-.testimonial3 .testi3 .thumb-img img {
-  width: 60px; }
-
-.testimonial3 .testi3 .customer {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 500; }
-
-/*******************
-Blog homepage 2
-*******************/
-.blog-home2 [class*=col-] {
-  -webkit-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
-  transition: 0.2s ease-in; }
-  .blog-home2 [class*=col-]:hover {
-    -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px); }
-
-.blog-home2 .date-pos {
-  padding: 10px;
-  display: inline-block;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  color: #ffffff;
-  border-radius: 4px;
-  text-align: center; }
-  .blog-home2 .date-pos span {
-    display: block;
-    font-size: 30px;
-    line-height: 30px; }
 
 /*******************
 Responsive
@@ -420,6 +336,17 @@ Responsive
 @media screen and (max-width: 996px) {
     .banner{
         padding: none !important;
+    }
+    .navbar-brand img {
+        height: 40px;
+        width: 40px;
+        object-fit: contain;
+        transform: scale(1.9);
+        padding: 2px;
+        margin-right: 8px;
+    }
+    .h11-nav{
+        padding: none;
     }
 }
 
@@ -481,8 +408,7 @@ Responsive
     .banner-content{
         background-color: rgba(0,0,0,0.3);
     }
-    input,
-  .span-select {
+    input {
       border-radius: 0;
       font-size: 12px;
       line-height: 1.7;
@@ -493,13 +419,6 @@ Responsive
       display: block;
   }
   .form-data {
-
-      select {
-          background: tranparent;
-          font-size: 12px;
-            color: $bodytext;
-            font-weight: 300;
-        }
         .sec-icon {
             i {
                 left: 15px;
@@ -509,33 +428,6 @@ Responsive
                 z-index: 10;
             }
         }
-        .date label {
-            position: absolute;
-            right: 15px;
-            right: 15px;
-          top: 8px;
-
-          i {
-              left: 0;
-              top: 0;
-          }
-      }
-      .span-select {
-          overflow: hidden;
-          position: relative;
-
-          i {
-              right: 0;
-              top: 8px;
-              left: auto;
-              position: absolute;
-               font-size: 20px;
-           }
-           select {
-               min-width: 250px;
-           }
-       }
-
    }
 }
 
@@ -543,29 +435,9 @@ Responsive
    #banner4 {
        .b-b {
            border: none;
-       }
-       h2 {
-         font-size: 32px;
-     }
-     input {
-         margin-left: 20px;
-     }
- }
-}
-
-@media (max-width: 428px) {
-     #banner4 {
-         .form-data {
-             overflow: hidden;
-             .span-select {
-                 select {
-                    .span-select {
-                        select {
-                            width: 110%;
-                        }
-                    }
-                }
-            }
+        }
+        h2 {
+           font-size: 32px;
         }
     }
 }
@@ -577,9 +449,6 @@ Responsive
           padding-left: 0;
           padding-right: 0;
       }
-      input {
-          margin-left: 45px;
-       }
        .form-data {
 
            .bg-white {
@@ -620,7 +489,7 @@ Responsive
             padding-right: 0;
         }
         input {
-            margin-left: 45px;
+            margin-left: 5px;
         }
         .form-data {
 

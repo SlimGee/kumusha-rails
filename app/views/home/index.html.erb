@@ -1,34 +1,31 @@
 <section class="">
-        <div id="banner4" class="banner hero" style="background-image:url( <%= image_url('3.jpg') %> )">
-            <div class="banner-content">
-                <div class="container" data-aos="fade-down" data-aos-duration="1500">
+    <div id="banner4" class="banner hero" style="background-image:url( <%= image_url('3.jpg') %> )">
+        <div class="banner-content">
+            <div class="container" data-aos="fade-down" data-aos-duration="1500">
+                <div class="col-md-7 mx-auto">
                     <h2 class="title text-white text-center font-bold m-b-30">There's no place like home,<br> Get yours today</h2>
                     <div class="row form-data" id="search">
-                        <div class="col-sm-6 col-md-4 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
-                            <i class="fa fa-map-marker text-danger"></i>
-                            <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
+                        <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
+                                <i class="fa fa-map-marker text-danger"></i>
+                            </span>
+                          </div>
+                          <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
                         </div>
-                        <div class="col-sm-6 col-md-4 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
-                           <i class="fa fa-list text-danger"></i>
-                           <span class="span-select b-b m-l-20">
-                               <select class="b-0 custom-select form-control text-uppercase">
-                                   <option>For Sale</option>
-                               </select>
-                               <i class="fa fa-angle-down"></i>
-                           </span>
-                       </div>
 
-                       <div class="col-sm-6 col-md-3 p-b-10 p-t-10 bg-white">
-                           <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
-                      </div>
-                      <div class="col-md-1 p-0">
-                          <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control"><i class="fa fa-search"></i></button>
-                      </div>
-                  </div>
-              </div>
+                        <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
+                            <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
+                        </div>
+                        <div class="col-md-2 p-0">
+                            <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
           </div>
       </div>
-  </section>
+  </div>
+</section>
 
 
 <div class="spacer bg-light">

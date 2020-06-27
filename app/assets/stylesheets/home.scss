@@ -482,6 +482,9 @@ Responsive
 
 
 @media (max-width: 320px) {
+    .hero{
+        background-position: unset;
+    }
     #banner4 {
         input,
         select {

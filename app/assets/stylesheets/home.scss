@@ -443,45 +443,6 @@ Responsive
 }
 
 @media (max-width: 320px) {
-  #banner4 {
-      input,
-      select {
-          padding-left: 0;
-          padding-right: 0;
-      }
-       .form-data {
-
-           .bg-white {
-               padding-left: 0;
-               padding-right: 0;
-           }
-           .sec-icon {
-               i {
-                   left: 10px;
-               }
-           }
-           .date {
-               label {
-                   right: 25px;
-               }
-           }
-           .span-select {
-               i {
-                   right: 10px;
-                   left: auto;
-               }
-               select {
-                   margin-left: 20px;
-                   width: 100%;
-               }
-           }
-       }
-   }
-}
-
-
-
-@media (max-width: 320px) {
     .hero{
         background-position: unset;
     }
@@ -490,6 +451,9 @@ Responsive
         select {
             padding-left: 0;
             padding-right: 0;
+        }
+        h2 {
+            font-weight: normal;
         }
         input {
             margin-left: 5px;
@@ -503,21 +467,6 @@ Responsive
             .sec-icon {
               i {
                   left: 10px;
-              }
-          }
-          .date {
-              label {
-                  right: 25px;
-              }
-          }
-          .span-select {
-              i {
-                  right: 10px;
-                  left: auto;
-              }
-              select {
-                  margin-left: 20px;
-                  width: 100%;
               }
           }
       }

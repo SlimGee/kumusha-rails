@@ -11,8 +11,8 @@
     <meta name="description" content="Our website is in beta testing">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Kumusha Properties - Home</title>
+    <link rel="icon" type="image/png" sizes="16x16" href=" <%= image_url('favicon.png') %> ">
+    <title>Kumusha Properties - <% if defined?(@title) %> <%= @title %> <% else %> 'Home' <% end %></title>
     <!-- Bootstrap Core CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->

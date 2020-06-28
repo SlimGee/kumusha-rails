@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
+      @title = 'Properties'
       if params[:q]
           @properties = Elasticsearch::Model.search(params[:q]).records
           if params[:price]
@@ -15,6 +16,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+      @title = @property.title
   end
 
   private

@@ -40,13 +40,13 @@
         <div class="owl-carousel owl-theme tcards m-t-40">
             <% @properties.each do |property| %>
                 <div class="item card-shadow property-box" data-aos="fade-right">
-                    <%= link_to property, title: @property.title do %>
-                        <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: @property.title %>
+                    <%= link_to property, title: property.title do %>
+                        <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
                     <% end %>
                     <div class="bg-white p-40 po-relative">
                         <label class="label text-white bg-info">ON RENT</label>
                         <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                            <%= link_to property.title, property, title: @property.title, class: 'link' %>
+                            <%= link_to property.title, property, title: property.title, class: 'link' %>
                         </h3>
                         <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
                         <h3 class="text-info m-b-0">$ <%= property.price %> </h3>

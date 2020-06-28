@@ -15,6 +15,7 @@
  *= require owl.carousel/dist/assets/owl.carousel.min.css
  *= require owl.carousel/dist/assets/owl.theme.green.css
  *= require bs-touch-swipe
+ *= require toastr/toastr
  *= require_self
  *= require home
  *= require properties

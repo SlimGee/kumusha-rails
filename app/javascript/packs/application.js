@@ -15,6 +15,7 @@ require('owl.carousel')
 require('jquery-touchswipe')
 require('./bs.touch.swipe')
 window.Swiper = require('swiper')
+window.toastr = require('toastr')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -35,5 +36,13 @@ $(document).ready(() => {
         else {
 
         }
+    })
+
+    let form = document.querySelector('#contactForm')
+    form.addEventListener('ajax:complete', (event) => {
+        Array.prototype.map.call(form.elements, (field) => {
+            field.value = ''
+        })
+        toastr.success('Thank you for your message')
     })
 })

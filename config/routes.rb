@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       resources :bookings, :except => [:show, :index]
   end
 
+  post '/contact', to: 'home#contact', as: 'contact'
+
   root to: "home#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

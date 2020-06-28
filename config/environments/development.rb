@@ -33,6 +33,15 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              ENV['SMTP_HOST'],
+      port:                 ENV['SMTP_PORT'],
+      user_name:            ENV['SMTP_USER'],
+      password:             ENV['SMTP_PASS'],
+      authentication:       :plain,
+      enable_starttls_auto: true
+  }
 
   config.action_mailer.perform_caching = false
 

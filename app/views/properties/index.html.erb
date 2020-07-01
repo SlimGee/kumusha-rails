@@ -34,11 +34,13 @@
             <% @properties.each do |property|%>
                 <div class="grid-sizer grid-item col-md-4 col-sm-12">
                     <div class="item card-shadow property-box" data-aos="fade-right">
-                        <%= image_tag property.property_images.first.image_url, class: 'img-fluid' %>
+                        <%= link_to property, title: property.title do %>
+                            <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
+                        <% end %>
                        <div class="bg-white p-40 po-relative">
                            <label class="label text-white bg-danger">ON SALE</label>
                            <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                               <%= link_to property.title, property, class: 'link'  %>
+                               <%= link_to property.title, property, class: 'link', title: property.title  %>
                            </h3>
                            <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
                            <h3 class="text-info m-b-0">$685,000 </h3>
@@ -71,7 +73,6 @@
 
         </div>
     </div>
-</div>
 <script>
 
 </script>

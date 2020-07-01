@@ -12,22 +12,15 @@ window.Chart = require('chart.js')
 
 
 import "@fortawesome/fontawesome-free/js/all";
-
 import * as FilePond from 'filepond';
-
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
-
-// Register the plugin
-
-// Import the plugin styles
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 
-// Register the plugin
-FilePond.registerPlugin(FilePondPluginImagePreview);
-FilePond.registerPlugin(FilePondPluginImageExifOrientation);
-
-// Register the plugin
+FilePond.registerPlugin(
+    FilePondPluginImageExifOrientation,
+    FilePondPluginImagePreview
+)
 
 $(document).on('turbolinks:load', () => {
     const inputElement = document.querySelector('input[type="file"]');
@@ -48,13 +41,16 @@ $(document).on('turbolinks:load', () => {
         Array.prototype.forEach.call(files, (item) => {
             form.append('images[]', item.file, item.file.name)
         })
-        const formElements = document.querySelector('#form').elements
+
+        const formElement =  document.querySelector('#form')
+        const formElements = formElement.elements
+
         Array.prototype.forEach.call(formElements, (item) => {
             form.append(item.name, item.value)
         })
 
         const request = new XMLHttpRequest()
-        request.open('POST', '/admin/properties')
+        request.open('POST', formElement.action)
         request.onload = () => {
             console.log(request);
             Turbolinks.visit(request.responseURL)

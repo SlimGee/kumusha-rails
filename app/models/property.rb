@@ -9,7 +9,10 @@ class Property < ApplicationRecord
 
     has_many :property_images, dependent: :destroy
     has_many :bookings, dependent: :destroy
-    
+
     accepts_nested_attributes_for :property_images, allow_destroy: true
 
+    def images
+      # code
+    end
 end

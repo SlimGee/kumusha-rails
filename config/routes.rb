@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'home/index'
-    get '/', to: 'properties#index'
-    resources :properties, :except => [:show]
-  end
 
+  namespace :admin do
+      resources :users
+      resources :properties
+      resources :property_images
+      resources :bookings
+
+      root to: "users#index"
+    end
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_up: 'register', sign_out: 'logout'}
 
   resources :properties, :only => [:show, :index] do

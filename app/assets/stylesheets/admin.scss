@@ -1,6 +1,5 @@
 /**
  *= require bootstrap
- *= require startbootstrap-sb-admin-2/css/sb-admin-2
  *= require filepond/dist/filepond
  *= require filepond-plugin-image-preview/dist/filepond-plugin-image-preview
  *= require_self
@@ -41,4 +40,20 @@
 
  @keyframes rotate {
  100% {transform: rotate(360deg);}
+ }
+
+ .filepond--item {
+     width: calc(50% - .5em);
+ }
+
+ @media (min-width: 30em) {
+     .filepond--item {
+         width: calc(50% - .5em);
+     }
+ }
+
+ @media (min-width: 50em) {
+     .filepond--item {
+         width: calc(33.33% - .5em);
+     }
  }

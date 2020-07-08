@@ -2,24 +2,7 @@
 <div class="spacer bg-light">
   <div class="container">
     <div class="spacer" id="banner4">
-      <div class="row form-data" id="search">
-        <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
-          <div class="input-group-prepend">
-            <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
-              <i class="fa fa-map-marker text-danger"></i>
-            </span>
-          </div>
-          <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
-        </div>
-        <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
-          <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
-        </div>
-        <div class="col-md-2 p-0">
-          <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
+      <%= render 'home/search' %>
     </div>
 
     <div class="row m-t-40">

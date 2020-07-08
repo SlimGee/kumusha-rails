@@ -35,6 +35,7 @@ $(document).on('turbolinks:load', () => {
     $('#form').on('submit', (e) => {
         e.preventDefault()
         e.stopPropagation()
+        document.querySelector('#parent-loader').classList.remove('d-none')
 
         const files = pond.getFiles()
         const form = new FormData()
@@ -56,7 +57,6 @@ $(document).on('turbolinks:load', () => {
             Turbolinks.visit(request.responseURL)
         }
         request.onprogress = () => {
-            document.querySelector('#parent-loader').classList.remove('d-none')
         }
         request.send(form)
     })

@@ -1,7 +1,7 @@
-<section class="">
+   <section class="">
     <div id="banner4" class="spacer hero banner" style="background-image:url( <%= image_url('3.jpg') %> )">
         <div class="banner-content">
-            <div class="container" data-aos="fade-down" data-aos-duration="1500">
+            <div class="container"    >
                 <div class="col-md-7 mx-auto">
                     <h2 class="title text-white text-center font-bold m-b-30">
                         There's no place like home,<br> Get yours today
@@ -39,14 +39,14 @@
         </div>
         <div class="owl-carousel owl-theme tcards m-t-40">
             <% @properties.each do |property| %>
-                <div class="item card-shadow property-box" data-aos="fade-right">
+                <div class="item card-shadow property-box"  >
                     <%= link_to property, title: property.title do %>
                         <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
                     <% end %>
                     <div class="bg-white p-40 po-relative">
                         <label class="label text-white bg-info">ON RENT</label>
                         <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                            <%= link_to property.title, property, title: property.title, class: 'link' %>
+                            <%= link_to property.title, property_path(property), title: property.title, class: 'link' %>
                         </h3>
                         <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
                         <h3 class="text-info m-b-0">$ <%= property.price %> </h3>
@@ -83,7 +83,7 @@
 
     <div class="container">
         <div class="row justify-content-center wrap-feature42-box">
-            <div class="col-md-10 col-lg-7 text-center aos-init aos-animate" data-aos="fade-up">
+            <div class="col-md-10 col-lg-7 text-center  "  >
                 <h2 class="title text-white">We're Always the way to go</h2>
                 <h6 class="subtitle text-white op-7 m-b-20">
                     Making a decision to sell your home is not easy, let alone selling it. Let us do the hard or you can begin with a valuation
@@ -113,7 +113,7 @@
         </div>
     </div>
     <div class="wrap-feature-28 row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 order-1 order-md-0">
             <div class="side-content both-space text-right pull-right">
                 <h2 class="title">#1 Trusted Estate Agency</h2>
                 <p>
@@ -125,7 +125,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-lg-6 bg-cover" style="background-image:url( <%= image_url('4.jpg') %> )">
+        <div class="col-lg-6 bg-cover order-0 order-md-1" style="background-image:url( <%= image_url('4.jpg') %> )">
         </div>
     </div>
 
@@ -160,14 +160,14 @@
             <div class="container">
                 <div class="row m-0">
                     <div class="col-lg-7">
-                        <div class="card-shadow" data-aos="flip-left" data-aos-duration="1200">
+                        <div class="card-shadow"    >
                             <img src="https://res.cloudinary.com/dwinzyahj/image/upload/v1593269442/johannes-plenio-UGMf30W28qc-unsplash_chtr3l.jpg" alt="Kumusha Properties" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="contact-box m-l-30">
                             <h1 class="title font-light m-t-10">Contact Us</h1>
-                            <%= form_with(url: contact_path, id: 'contactForm', method: 'post', local: false,  data: {:aos => 'fade-left', :'aos-duration' => '1200' }, class: 'm-t-30') do |form| %>
+                            <%= form_with(url: contact_path, id: 'contactForm', method: 'post', local: false,  data: { }, class: 'm-t-30') do |form| %>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group m-t-10">
@@ -203,7 +203,7 @@
 
 </div>
 
-<div class="spacer feature14">
+<div class="spacer feature14"    >
     <div class="container">
         <!-- row  -->
         <div class="row justify-content-center">

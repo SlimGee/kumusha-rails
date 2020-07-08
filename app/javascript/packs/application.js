@@ -12,8 +12,7 @@ window.$ =  window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
 require('owl.carousel')
-require('jquery-touchswipe')
-require('./bs.touch.swipe')
+
 window.Swiper = require('swiper')
 window.toastr = require('toastr')
 
@@ -24,25 +23,28 @@ window.toastr = require('toastr')
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-$(document).ready(() => {
-    $('#startSearch').on('click', () => {
-        let place = $('#city').val()
-        let price = $('#price').val()
-        if (place.length > 1 && price.length > 1) {
-            Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place).concat('&price=').concat(price))
-        } else if (place.length > 1) {
-            Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place))
-        }
-        else {
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#startSearch').addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    let place = document.querySelector('#city').value
+    let price = document.querySelector('#price').value
+    if (place.length > 1 && price.length > 1) {
+      Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place).concat('&price=').concat(price))
+    } else if (place.length > 1) {
+      Turbolinks.visit(window.location.origin.concat('/properties?q=').concat(place))
+    } else {
+      toastr.error('Please type something before hitting search')
+    }
+  })
 
-        }
-    })
-
-    let form = document.querySelector('#contactForm')
+  let form = document.querySelector('#contactForm')
+  if (form != null) {
     form.addEventListener('ajax:complete', (event) => {
-        Array.prototype.map.call(form.elements, (field) => {
-            field.value = ''
-        })
-        toastr.success('Thank you for your message')
+      Array.prototype.map.call(form.elements, (field) => {
+        field.value = ''
+      })
+      toastr.success('Thank you for your message')
     })
+  }
 })

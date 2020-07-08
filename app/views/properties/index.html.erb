@@ -1,78 +1,38 @@
 
 <div class="spacer bg-light">
-    <div class="container">
-        <!-- Row  -->
-        <div class="spacer" id="banner4">
-            <div class="row form-data" id="search">
-                <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
-                        <i class="fa fa-map-marker text-danger"></i>
-                    </span>
-                  </div>
-                  <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
-                </div>
-
-                <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
-                    <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
-                </div>
-                <div class="col-md-2 p-0">
-                    <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
+  <div class="container">
+    <div class="spacer" id="banner4">
+      <div class="row form-data" id="search">
+        <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
+              <i class="fa fa-map-marker text-danger"></i>
+            </span>
           </div>
+          <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
         </div>
-        <!-- Row  -->
-        <div class="row m-t-40">
-            <% if !@properties.any? %>
-                <div class="col-md-8 mx-auto text-center">
-                    <h1>Sorry We didn't find anything, Try another search or</h1>
-                    <a href="#" class="btn btn-danger-gradiant">Contact Us</a>
-                </div>
-            <% end %>
-
-            <% @properties.each do |property|%>
-                <div class="grid-sizer grid-item col-md-4 col-sm-12">
-                    <div class="item card-shadow property-box" data-aos="fade-right">
-                        <%= link_to property, title: property.title do %>
-                            <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
-                        <% end %>
-                       <div class="bg-white p-40 po-relative">
-                           <label class="label text-white bg-danger">ON SALE</label>
-                           <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                               <%= link_to property.title, property, class: 'link', title: property.title  %>
-                           </h3>
-                           <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
-                           <h3 class="text-info m-b-0">$ <%= property.price %> </h3>
-                       </div>
-                       <div class="bg-light-extra p-40 specifiaction-box">
-                           <div class="row">
-                               <div class="col-4">
-                                   <h6 class="specifiaction text-muted">Bedrooms</h6>
-                                   <h5 class="m-b-0 font-medium">
-                                       <%= property.bedrooms %>
-                                   </h5>
-                               </div>
-                               <div class="col-4">
-                                   <h6 class="specifiaction text-muted">Units</h6>
-                                   <h5 class="m-b-0 font-medium">
-                                       <%= property.units %>
-                                   </h5>
-                               </div>
-                               <div class="col-4">
-                                   <h6 class="specifiaction text-muted">Yard (sqm)</h6>
-                                   <h5 class="m-b-0 font-medium">
-                                       <%= property.yard %>
-                                   </h5>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                </div>
-            <% end %>
-
+        <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
+          <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
         </div>
+        <div class="col-md-2 p-0">
+          <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
-<script>
 
-</script>
+    <div class="row m-t-40">
+      <% if !@properties.any? %>
+        <div class="col-md-8 mx-auto text-center">
+          <h1>Sorry We didn't find anything, Try another search or</h1>
+          <a href=" <%= root_path %>#contact " class="btn btn-danger-gradiant">Contact Us</a>
+        </div>
+      <% end %>
+
+      <% @properties.each do |property|%>
+        <%= render 'property', :property => property %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,220 +1,206 @@
-   <section class="">
-    <div id="banner4" class="spacer hero banner" style="background-image:url( <%= image_url('3.jpg') %> )">
-        <div class="banner-content">
-            <div class="container"    >
-                <div class="col-md-7 mx-auto">
-                    <h2 class="title text-white text-center font-bold m-b-30">
-                        There's no place like home,<br> Get yours today
-                    </h2>
-                    <div class="row form-data" id="search">
-                        <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
-                                <i class="fa fa-map-marker text-danger"></i>
-                            </span>
-                          </div>
-                          <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
-                        </div>
-
-                        <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
-                            <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
-                        </div>
-                        <div class="col-md-2 p-0">
-                            <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
+<div id="banner4" class="spacer hero banner" style="background-image:url( <%= image_url('3.jpg') %> )">
+  <div class="banner-content">
+    <div class="container">
+      <div class="col-md-7 mx-auto">
+        <h2 class="title text-white text-center font-bold m-b-30">
+          There's no place like home,<br> Get yours today
+        </h2>
+        <div class="row form-data" id="search">
+          <div class="input-group col-sm-6 col-md-6 b-r p-b-10 p-t-10 bg-white sec-icon po-relative">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-transparent outline-none border-0" id="basic-addon1">
+                <i class="fa fa-map-marker text-danger"></i>
+              </span>
+            </div>
+            <input type="text" id="city" name="" value="" placeholder="City, place, or address" class="ml-md-2 form-control b-b text-uppercase">
           </div>
+          <div class="input-group col-sm-6 col-md-4 p-b-10 p-t-10 bg-white">
+            <input type="text" name="" id="price" placeholder="Max Price" class="text-uppercase form-control b-b" />
+          </div>
+          <div class="col-md-2 p-0">
+            <button id="startSearch" class="b-0 text-center h-100 bg-success-gradiant text-white font-14 form-control">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</section>
-
+</div>
 
 <div class="spacer bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-7 text-center">
-                <h2 class="title">Recent Listings</h2>
-            </div>
-        </div>
-        <div class="owl-carousel owl-theme tcards m-t-40">
-            <% @properties.each do |property| %>
-                <div class="item card-shadow property-box"  >
-                    <%= link_to property, title: property.title do %>
-                        <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
-                    <% end %>
-                    <div class="bg-white p-40 po-relative">
-                        <label class="label text-white bg-info">ON RENT</label>
-                        <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
-                            <%= link_to property.title, property_path(property), title: property.title, class: 'link' %>
-                        </h3>
-                        <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
-                        <h3 class="text-info m-b-0">$ <%= property.price %> </h3>
-                    </div>
-                    <div class="bg-light-extra p-40 specifiaction-box">
-                        <div class="row">
-                            <div class="col-4">
-                                <h6 class="specifiaction text-muted">Bedrooms</h6>
-                                <h5 class="m-b-0 font-medium">
-                                    <%= property.bedrooms %>
-                                </h5>
-                            </div>
-                            <div class="col-4">
-                                <h6 class="specifiaction text-muted">Units</h6>
-                                <h5 class="m-b-0 font-medium">
-                                    <%= property.units %>
-                                </h5>
-                            </div>
-                            <div class="col-4">
-                                <h6 class="specifiaction text-muted">Yard (sqm)</h6>
-                                <h5 class="m-b-0 font-medium">
-                                    <%= property.yard %>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2 class="title">Recent Listings</h2>
+      </div>
     </div>
+
+    <div class="owl-carousel owl-theme tcards m-t-40">
+      <% @properties.each do |property| %>
+        <div class="item card-shadow property-box"  >
+          <%= link_to property, title: property.title do %>
+            <%= image_tag property.property_images.first.image_url, class: 'img-fluid', alt: property.title %>
+          <% end %>
+          <div class="bg-white p-40 po-relative">
+            <label class="label text-white bg-danger">ON SALE</label>
+            <h3 data-animation="animated flipInX" class="m-b-10 m-t-0">
+              <%= link_to property.title, property_path(property), title: property.title, class: 'link' %>
+            </h3>
+            <p data-animation="animated fadeInLeft" class="m-t-20"> <%= property.address %> </p>
+            <h3 class="text-info m-b-0">$ <%= property.price %> </h3>
+          </div>
+          <div class="bg-light-extra p-40 specifiaction-box">
+            <div class="row">
+              <div class="col-4">
+                <h6 class="specifiaction text-muted">Bedrooms</h6>
+                <h5 class="m-b-0 font-medium">
+                  <%= property.bedrooms %>
+                </h5>
+              </div>
+              <div class="col-4">
+                <h6 class="specifiaction text-muted">Hosing Units</h6>
+                <h5 class="m-b-0 font-medium">
+                  <%= property.units %>
+                </h5>
+              </div>
+              <div class="col-4">
+                <h6 class="specifiaction text-muted">Yard (sqm)</h6>
+                <h5 class="m-b-0 font-medium">
+                  <%= property.yard %>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
 </div>
 
 <div class="spacer feature42" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url( <%= image_url('2.jpg') %> )">
-
-    <div class="container">
-        <div class="row justify-content-center wrap-feature42-box">
-            <div class="col-md-10 col-lg-7 text-center  "  >
-                <h2 class="title text-white">We're Always the way to go</h2>
-                <h6 class="subtitle text-white op-7 m-b-20">
-                    Making a decision to sell your home is not easy, let alone selling it. Let us do the hard or you can begin with a valuation
-                </h6>
-                <a href="#contact" class="btn btn-danger-gradiant btn-lg">Get Free Valuation</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center wrap-feature42-box">
+      <div class="col-md-10 col-lg-7 text-center  "  >
+        <h2 class="title text-white">We're Always the way to go</h2>
+        <h6 class="subtitle text-white op-7 m-b-20">
+          Making a decision to sell your home is not easy, let alone selling it. Let us do the hard or you can begin with a valuation
+        </h6>
+        <a href="#contact" class="btn btn-danger-gradiant btn-lg">Get Free Valuation</a>
+      </div>
     </div>
-
+  </div>
 </div>
 
-
-<div class="">
-
-    <div class="wrap-feature-28 row">
-        <div class="col-lg-6 bg-cover" style="background-image:url('https://res.cloudinary.com/dwinzyahj/image/upload/v1593266610/cytonn-photography-n95VMLxqM2I-unsplash-min_jcmhxz.jpg')"></div>
-        <div class="col-lg-6">
-            <div class="side-content both-space">
-                <h2 class="title">You're in good company</h2>
-                <p>
-                    We are in constant communication with our clients and keep them posted and always stick to agreements. One can bank on our response
-                </p>
-                <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" data-toggle="collapse" href="#contact">
-                    <span>Contact Us <i class="fa fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
+<div class="wrap-feature-28 row">
+  <div class="col-lg-6 bg-cover" style="background-image:url('https://res.cloudinary.com/dwinzyahj/image/upload/v1593266610/cytonn-photography-n95VMLxqM2I-unsplash-min_jcmhxz.jpg')"></div>
+  <div class="col-lg-6">
+    <div class="side-content both-space">
+      <h2 class="title">You're in good company</h2>
+      <p>
+        We are in constant communication with our clients and keep them posted and always stick to agreements. One can bank on our response
+      </p>
+      <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" href="#contact">
+        <span>Contact Us <i class="fa fa-arrow-right"></i></span>
+      </a>
     </div>
-    <div class="wrap-feature-28 row">
-        <div class="col-lg-6 order-1 order-md-0">
-            <div class="side-content both-space text-right pull-right">
-                <h2 class="title">#1 Trusted Estate Agency</h2>
-                <p>
-                    Trust is our value and we mutually share this attribute with our clients both the buyres and sellers.
-                    We take pride accurate prices agreed by the seller and communicate the same to our buyers
-                </p>
-                <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" href=" <%= properties_path %> ">
-                    <span>Learn More <i class="fa fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-6 bg-cover order-0 order-md-1" style="background-image:url( <%= image_url('4.jpg') %> )">
-        </div>
+  </div>
+</div>
+<div class="wrap-feature-28 row">
+  <div class="col-lg-6 order-1 order-md-0">
+    <div class="side-content both-space text-right pull-right">
+      <h2 class="title">#1 Trusted Estate Agency</h2>
+      <p>
+        Trust is our value and we mutually share this attribute with our clients both the buyres and sellers.
+        We take pride accurate prices agreed by the seller and communicate the same to our buyers
+      </p>
+      <a class="btn btn-info-gradiant btn-md btn-arrow m-t-20" href=" <%= properties_path %> ">
+        <span>Browse Property <i class="fa fa-arrow-right"></i></span>
+      </a>
     </div>
-
+  </div>
+  <div class="col-lg-6 bg-cover order-0 order-md-1" style="background-image:url( <%= image_url('4.jpg') %> )"></div>
 </div>
 
 <div class="bg-light spacer feature14 feature42" id="about" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/dwinzyahj/image/upload/v1593266618/national-cancer-institute-VJVsEnR_vNE-unsplash-min_rshrjw.jpg')">
-    <div class="container">
-        <!-- row  -->
-        <div class="row justify-content-center">
-            <div class="col-md-7 text-center">
-                <h2 class="title text-white">Aboout Us</h2>
-            </div>
-        </div>
-        <!-- row  -->
-        <div class="row m-t-40 p-t-20">
-            <div class="col-lg-6 col-md-6 mx-auto wrap-feature14-box">
-                <div class="">
-                    <p class="text-center text-white lead">
-                        We are a Real Estate Agency well versed in researching and compilation of verified properties for sale around Zimbabwe.
-                        Our HQ is in Victoria Falls. We both sell and look for properties on behalf of our clients.
-                        We are also a team that cares for our clients and give them enough information on how to buy a property and what type of papers to ask from the seller
-                    </p>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2 class="title text-white">Aboout Us</h2>
+      </div>
     </div>
+
+    <div class="row m-t-40 p-t-20">
+      <div class="col-lg-6 col-md-6 mx-auto wrap-feature14-box">
+        <p class="text-center text-white lead">
+          We are a Real Estate Agency well versed in researching and compilation of verified properties for sale around Zimbabwe.
+          Our HQ is in Victoria Falls. We both sell and look for properties on behalf of our clients.
+          We are also a team that cares for our clients and give them enough information on how to buy a property and what type of papers to ask from the seller
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="spacer" id="contact">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="container">
-                <div class="row m-0">
-                    <div class="col-lg-7">
-                        <div class="card-shadow"    >
-                            <img src="https://res.cloudinary.com/dwinzyahj/image/upload/v1593269442/johannes-plenio-UGMf30W28qc-unsplash_chtr3l.jpg" alt="Kumusha Properties" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="contact-box m-l-30">
-                            <h1 class="title font-light m-t-10">Contact Us</h1>
-                            <%= form_with(url: contact_path, id: 'contactForm', method: 'post', local: false,  data: { }, class: 'm-t-30') do |form| %>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group m-t-10">
-                                            <%= form.text_field :name, :class => 'form-control', :placeholder => 'Name', :required => true %>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group m-t-10">
-                                            <%= form.email_field :email, class: 'form-control', placeholder: 'Email Adress', :required => true %>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group m-t-10">
-                                            <%= form.text_field :phone, class: 'form-control', placeholder: 'Phone', :required => true %>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group m-t-10">
-                                            <%= form.text_area :message, class: 'form-control', placeholder: 'Message', :required => true %>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <%= form.submit 'SUBMIT', class: 'btn btn-info-gradiant btn-md m-t-20 btn-arrow', data: {:'disable-with' => 'Please Wait...'} %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-lg-7">
+            <div class="card-shadow"    >
+              <img src="https://res.cloudinary.com/dwinzyahj/image/upload/v1593269442/johannes-plenio-UGMf30W28qc-unsplash_chtr3l.jpg" alt="Kumusha Properties" class="img-responsive">
             </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="contact-box m-l-30">
+              <h1 class="title font-light m-t-10">Contact Us</h1>
+              <%= form_with(url: contact_path, id: 'contactForm', method: 'post', local: false,  data: { }, class: 'm-t-30') do |form| %>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group m-t-10">
+                      <%= form.text_field :name, :class => 'form-control', :placeholder => 'Name', :required => true %>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group m-t-10">
+                      <%= form.email_field :email, class: 'form-control', placeholder: 'Email Adress', :required => true %>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group m-t-10">
+                      <%= form.text_field :phone, class: 'form-control', placeholder: 'Phone', :required => true %>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group m-t-10">
+                      <%= form.text_area :message, class: 'form-control', placeholder: 'Message', :required => true %>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <%= form.submit 'SUBMIT', class: 'btn btn-info-gradiant btn-md m-t-20 btn-arrow', data: {:'disable-with' => 'Please Wait...'} %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
+  </div>
 </div>
 
-<div class="spacer feature14"    >
-    <div class="container">
-        <!-- row  -->
-        <div class="row justify-content-center">
-            <div class="col-md-7 text-center">
-                <h2 class="title">Are you happy with what we offer? Get Your Dream Home Now</h2>
-                <a class="btn btn-danger btn-md m-t-20" href=" <%= properties_path %> ">Search Properties</a>
-            </div>
-            <div class="col-md-12 text-center m-t-30">
-                <%= image_tag 'vectorecity.jpg', alt: "kumusha properties", class: 'img-fluid' %>
-            </div>
-        </div>
-        <!-- row  -->
+<div class="spacer feature14">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2 class="title">Are you happy with what we offer? Get Your Dream Home Now</h2>
+        <a class="btn btn-danger btn-md m-t-20" title="houses for sale" href=" <%= properties_path %> ">Search Properties</a>
+      </div>
+      <div class="col-md-12 text-center m-t-30">
+        <%= image_tag 'vectorecity.jpg', alt: "kumusha properties", class: 'img-fluid' %>
+      </div>
     </div>
+  </div>
 </div>

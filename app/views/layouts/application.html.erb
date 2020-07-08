@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="We are a Real Estate Agency well versed in researching and compilation of verified properties for sale around Zimbabwe.
     Our HQ is in Victoria Falls. We both sell and look for properties on behalf of our clients.
@@ -33,175 +32,21 @@
 </head>
 
 <body class="">
-       <!-- ============================================================== -->
-       <!-- Main wrapper - style you can find in pages.scss -->
-       <!-- ============================================================== -->
-       <div id="main-wrapper">
-           <!-- ============================================================== -->
-           <!-- Top header  -->
-           <!-- ============================================================== -->
-           <div class="topbar bg-white <% if defined? @property %> d-none <% end %>">
-               <div class="header11 po-relative">
-                   <div class="container">
-                       <nav class="navbar navbar-expand-lg h11-nav">
-                           <a class="navbar-brand" href=" <%= root_path %> ">
-                               <%= image_tag 'logo_transparent.png', alt: 'Kumusha Properties' %> Kumusha <span class="d-none d-md-inline">Properties</span>
-                           </a>
-                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header12a" aria-controls="header12a" aria-expanded="false" aria-label="Toggle navigation">
-                               <span class="fa fa-bars"></span>
-                           </button>
+  <div id="main-wrapper">
 
-                           <div class="collapse navbar-collapse flex-column font-13" id="header12a">
-                               <div class="ml-auto h11-topbar">
+    <%= render 'partials/navbar' %>
 
-                                        <ul class="list-inline ">
-                                            <li>
-                                                <a href="https://www.twitter.com/zwkumusha" class="twitter" target="_blank">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/pages/category/Real-Estate/Kumusha-Properties-ZW-103547228035098" target="_blank" class="facebook">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.instagram.com/kumusha.propertieszw" class="instagram" target="_blank">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a>
-                                                    <i class="fa fa-phone"></i>  +263 732 659 841
-                                                </a>
-                                            </li>
-                                        </ul>
+    <div class="page-wrapper">
+      <div class="container-fluid">
 
-                               </div>
-                               <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                                   <li class="nav-item">
-                                        <% if current_page?(root_path) %>
-                                            <%= link_to "Home", root_path, class: 'nav-link active' %>
-                                        <% else %>
-                                            <%= link_to "Home", root_path, class: 'nav-link' %>
-                                        <% end %>
-                                   </li>
-                                   <li class="nav-item">
-                                        <% if current_page?(properties_path) %>
-                                            <%= link_to "Property", properties_path, class: 'nav-link active' %>
-                                        <% else %>
-                                            <%= link_to "Property", properties_path, class: 'nav-link ' %>
-                                        <% end %>
-                                   </li>
-                                   <li class="nav-item">
-                                       <%= link_to "About Us", '#about', class: 'nav-link' %>
-                                   </li>
-                                   <li class="nav-item">
-                                       <%= link_to "Contact Us", '#contact', class: 'nav-link' %>
-                                   </li>
-                                   <li class="nav-item m-auto">
-                                       <a class="btn btn-danger" href="#contact">Sell With Us</a>
-                                   </li>
-                               </ul>
-                           </div>
-                       </nav>
-                       <!-- End Header 12 navabar -->
-                   </div>
-               </div>
-           </div>
-           <!-- ============================================================== -->
-           <!-- Top header  -->
-           <!-- ============================================================== -->
-           <!-- ============================================================== -->
-           <!-- Page wrapper  -->
-           <!-- ============================================================== -->
-           <div class="page-wrapper">
-               <!-- ============================================================== -->
-               <!-- Container fluid  -->
-               <!-- ============================================================== -->
-               <div class="container-fluid">
-                  <%= yield %>
-               </div>
+        <%= yield %>
 
-               <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="ti-arrow-up"></i></a>
-           </div>
+      </div>
+      <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="ti-arrow-up"></i></a>
+    </div>
 
-
-       <div class="footer4 b-t spacer">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-3 col-md-6 m-b-30">
-                       <h5 class="m-b-20">Address</h5>
-                       <p>85 Aearodrome, Victoria Falls</p>
-                   </div>
-                   <div class="col-lg-3 col-md-6 m-b-30">
-                       <h5 class="m-b-20">Phone</h5>
-                       <p>Tech :  +263 786 801 704 <br/>Office :  +263 732 659 841</p>
-                   </div>
-                   <div class="col-lg-3 col-md-6 m-b-30">
-                       <h5 class="m-b-20">Email</h5>
-                       <p>
-                           Office :  <a href="mailto://kumusha.propertieszw@yahoo.com" class="link">info@kumushaproperties.co.zw</a>
-                       </p>
-                   </div>
-                   <div class="col-lg-3 col-md-6">
-                       <h5 class="m-b-20">Social</h5>
-                       <div class="round-social light">
-                           <a href="https://www.twitter.com/zwkumusha" class="twitter" target="_blank">
-                               <i class="fa fa-twitter"></i>
-                           </a>
-                           <a href="https://www.facebook.com/pages/category/Real-Estate/Kumusha-Properties-ZW-103547228035098" target="_blank" class="facebook">
-                               <i class="fa fa-facebook"></i>
-                           </a>
-                           <a href="https://www.instagram.com/kumusha.propertieszw" class="instagram" target="_blank">
-                               <i class="fa fa-instagram"></i>
-                           </a>
-                       </div>
-                   </div>
-               </div>
-               <div class="f4-bottom-bar">
-                   <div class="row">
-                       <div class="col-md-12">
-                           <div class="d-flex font-14">
-                               <div class="m-t-10 m-b-10 copyright">All Rights Reserved by Kumusha Properties.</div>
-                               <div class="links ml-auto m-t-10 m-b-10">
-                                 Website by <a href="https://flixtechs.co.zw" class="text-danger">Flixtechs</a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-           <!-- ============================================================== -->
-           <!-- End footer -->
-           <!-- ============================================================== -->
-       </div>
-
-    <script type="text/javascript">
-    //    AOS.init();
-        $('.tcards').owlCarousel({
-            loop: true,
-            margin: 30,
-            center: false,
-            nav: false,
-            dots: true,
-            autoplay: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false
-                },
-                768: {
-                    items: 2
-                },
-                1170: {
-                    items: 3
-                }
-            }
-        });
-    </script>
+    <%= render 'partials/footer' %>
+    <%= render 'partials/flashes' %>
+  </div>
 </body>
-
 </html>

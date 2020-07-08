@@ -47,4 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
       toastr.success('Thank you for your message')
     })
   }
+  $('.tcards').owlCarousel({
+      loop: true,
+      margin: 30,
+      center: false,
+      nav: false,
+      dots: true,
+      autoplay: true,
+      responsiveClass: true,
+      responsive: {
+          0: {
+              items: 1,
+              nav: false
+          },
+          768: {
+              items: 2
+          },
+          1170: {
+              items: 3
+          }
+      }
+  })
 })

@@ -16,6 +16,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+      @booking = @property.bookings.new
       @title = @property.title
   end
 

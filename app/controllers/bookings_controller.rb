@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
+  before_action :set_property
     def create
-      @booking = property.bookings.new bookings_params
+      @booking = @property.bookings.new bookings_params
       if @booking.save
           respond_to do |format|
             format.html { redirect_to @property, notice: 'Appointment booked successfully' }
@@ -11,7 +12,7 @@ class BookingsController < ApplicationController
 
     private
         def set_property
-          @property = Property.find(params[:property_id])
+          @property = Property.friendly.find(params[:property_id])
         end
 
         def bookings_params

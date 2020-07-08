@@ -63,3 +63,4 @@ gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: 'maste
 gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: 'master'
 gem 'bonsai-elasticsearch-rails', github: 'omc/bonsai-elasticsearch-rails', branch: 'master'
 gem 'administrate'
+gem 'friendly_id'
